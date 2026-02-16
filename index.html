@@ -1,284 +1,539 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>Clases de patinaje en línea en CDMX | Aelion · Freeskate</title>
-        <meta name="description" content="Clases de patinaje en línea en CDMX con Aelion. Aprende freeskate y patinaje urbano con clases personalizadas, seguras y adaptadas a tu nivel."/>
-        <!-- Open Graph -->
-        <meta property="og:type" content="website"/>
-        <meta property="og:url" content="https://daelion47.org/freeskate/"/>
-        <meta property="og:title" content="Aelion · Freeskate CDMX — Clases de patinaje en línea"/>
-        <meta property="og:description" content="Clases de patinaje en línea en CDMX. Freeskate, patinaje urbano y roller freestyle con clases personalizadas, seguras y conscientes."/>
-        <meta property="og:image" content="https://daelion47.org/media/img/og-freeskate.webp"/>
-        <meta property="og:image" content="https://daelion47.org/media/img/og-freeskate.jpg"/>
-        <meta property="og:image:width" content="1200"/>
-        <meta property="og:image:height" content="630"/>
-        <!-- Twitter -->
-        <meta name="twitter:card" content="summary_large_image"/>
-        <meta name="twitter:title" content="Aelion · Freeskate CDMX"/>
-        <meta name="twitter:description" content="Clases de patinaje en línea en CDMX. Freeskate y patinaje urbano con acompañamiento personalizado."/>
-        <meta name="twitter:image" content="https://daelion47.org/media/img/og-freeskate.webp"/>
-        <!-- CSS -->
-        <link href="bootstrap_theme/bootstrap.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="blocks.css"/>
-        <link href="style.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
-        <!-- Miniatura clicable estilo "reproductor" -->
-        <style>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Clases de patinaje en línea en CDMX | Aelion · Freeskate</title>
+    <meta
+      name="description"
+      content="Clases de patinaje en línea en CDMX con Aelion. Aprende freeskate y patinaje urbano con clases personalizadas, seguras y adaptadas a tu nivel."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://daelion47.org/freeskate/" />
+    <meta
+      property="og:title"
+      content="Aelion · Freeskate CDMX — Clases de patinaje en línea"
+    />
+    <meta
+      property="og:description"
+      content="Clases de patinaje en línea en CDMX. Freeskate, patinaje urbano y roller freestyle con clases personalizadas, seguras y conscientes."
+    />
+    <meta property="og:image" content="https://daelion47.org/media/img/og-freeskate.webp" />
+    <meta property="og:image" content="https://daelion47.org/media/img/og-freeskate.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aelion · Freeskate CDMX" />
+    <meta
+      name="twitter:description"
+      content="Clases de patinaje en línea en CDMX. Freeskate y patinaje urbano con acompañamiento personalizado."
+    />
+    <meta name="twitter:image" content="https://daelion47.org/media/img/og-freeskate.webp" />
+
+    <!-- CSS -->
+    <link href="bootstrap_theme/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" href="blocks.css" />
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+
+    <!-- YouTube thumbs (clicables) -->
+    <style>
+      .yt-wrap {
+        max-width: 340px; /* tamaño en desktop */
+        margin-inline: auto;
+      }
+      @media (max-width: 991px) {
+        .yt-wrap {
+          max-width: 320px; /* tamaño en móvil */
+        }
+      }
+
       .yt-thumb {
         aspect-ratio: 9 / 16;
         object-fit: cover;
         width: 100%;
-        border-radius: .75rem;
+        border-radius: 0.75rem;
         display: block;
       }
       .yt-play {
         font-size: 4rem;
         line-height: 1;
-        opacity: .95;
-        text-shadow: 0 8px 30px rgba(0,0,0,.55);
+        opacity: 0.95;
+        text-shadow: 0 8px 30px rgba(0, 0, 0, 0.55);
       }
       .yt-overlay {
         position: absolute;
         inset: 0;
         display: grid;
         place-items: center;
-        background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
-        border-radius: .75rem;
+        background: linear-gradient(to bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.35));
+        border-radius: 0.75rem;
       }
     </style>
-    </head>
-    <body>
-        <main>
-            <section class="hero-block pb-5 position-relative poster text-secondary" id="inicio">
-                <nav class="navbar navbar-dark navbar-expand-lg pb-3 pt-3 shadow-none">
-                    <div class="container">
-                        <a class="navbar-brand fw-bold" href="#inicio">Aelion · Freeskate</a>
-                        <button class="navbar-toggler rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir navegación">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarNav">
-                            <ul class="ms-auto navbar-nav">
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#inicio">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="https://daelion47.org" target="_blank" rel="noopener">Interfaz Sutil</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#aprender">Aprender a Patinar</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#clases">Clases Particulares</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <div class="container pb-5 pt-5">
-                    <div class="row">
-                        <div class="col-12 col-md-7 col-xxl-6 pt-5">
-                            <h1 class="display-1 mb-3 text-white">Aelion · Freeskate CDMX</h1>
-                            <p class="lead mb-4 pe-sm-5 text-white">
-                Soy <strong>Aelion Rhéon</strong>.<br/>
-                Instructor de patinaje urbano y patinador Freeskate.<br/>
-                Te enseño a fluir en la ciudad con técnica, libertad y presencia.<br/>
-                Clases 1 a 1, desde lo básico hasta movimientos avanzados. </p>
-                            <a href="#clases" class="btn btn-primary pb-3 pe-5 ps-5 pt-3">Reservar clase</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- BLOQUE: Cómo patino -->
-            <section class="bg-primary pb-5 pt-5 text-white">
-                <div class="container pb-5 pt-5">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-                            <a class="d-block position-relative text-decoration-none" href="https://youtube.com/shorts/dYQlhWgTBJY" target="_blank" rel="noopener" aria-label="Ver Cómo patino en YouTube"> <img class="yt-thumb" src="https://i.ytimg.com/vi/dYQlhWgTBJY/hqdefault.jpg" alt="Cómo patino — Aelion · Freeskate"> <span class="yt-overlay"> <i class="bi bi-play-circle-fill text-white yt-play"></i> </span> </a>
-                            <p class="mt-2 mb-0 small"> <a class="text-white text-decoration-underline" target="_blank" rel="noopener" href="https://youtube.com/shorts/dYQlhWgTBJY">Ver video en YouTube</a> </p>
-                        </div>
-                        <div class="col-lg-6">
-                            <h2 class="fw-bold h1 mb-3">Sobre mi forma de patinar</h2>
-                            <p class="fw-light">
-                Llevo más de 14 años sobre patines.<br><br>
-                No me encierro en una sola disciplina: me interesa el movimiento en todas sus formas.<br><br>
-                Si algo define mi estilo, es el Freeskate — por su libertad, su mezcla, su apertura.<br><br>
-                Aun así, con el tiempo desarrollé una forma propia de patinar:<br>
-                no repito, elijo.<br><br>
-                Conecto ideas, perfecciono gestos, expando posibilidades.<br><br>
-                Para mí, patinar no es técnica por sí sola:<br>
-                es atención, precisión y presencia en movimiento.<br>
-                Ahí nace el estilo. </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- Banner (video local) -->
-            <section id="gif-horizontal" class="bg-primary pt-0 pb-0">
-                <div class="container-fluid px-0">
-                    <div class="row gx-0">
-                        <video class="w-100" style="max-height: 587px; object-fit: cover" autoplay loop muted playsinline>
-                            <source src="media/videos/Video-banner.mp4" type="video/mp4"/>
-                        </video>
-                    </div>
-                </div>
-            </section>
-            <!-- BLOQUE: Movimiento Consciente (Yo danzo) -->
-            <section class="bg-dark pb-5 pt-5 text-center text-lg-start">
-                <div class="container pb-4 pt-4">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 ms-auto order-lg-2 py-3 text-center">
-                            <a class="d-block position-relative text-decoration-none" href="https://youtube.com/shorts/ZH9vJy0-IXc" target="_blank" rel="noopener" aria-label="Ver Yo danzo en YouTube"> <img class="yt-thumb" src="https://i.ytimg.com/vi/ZH9vJy0-IXc/hqdefault.jpg" alt="Yo danzo — Aelion · Freeskate"> <span class="yt-overlay"> <i class="bi bi-play-circle-fill text-white yt-play"></i> </span> </a>
-                            <p class="mt-2 mb-0 small"> <a class="text-white text-decoration-underline" target="_blank" rel="noopener" href="https://youtube.com/shorts/ZH9vJy0-IXc">Ver video en YouTube</a> </p>
-                        </div>
-                        <div class="col-lg-5 order-lg-1 py-3">
-                            <h2 class="display-4 fw-bold text-primary">Movimiento Consciente</h2>
-                            <h3 class="fw-light mb-4 text-white">El cuerpo también piensa</h3>
-                            <p class="mb-4 text-white">
+  </head>
+
+  <body>
+    <main>
+      <!-- HERO -->
+      <section class="hero-block pb-5 position-relative poster text-secondary" id="inicio">
+        <nav class="navbar navbar-dark navbar-expand-lg pb-3 pt-3 shadow-none">
+          <div class="container">
+            <a class="navbar-brand fw-bold" href="#inicio">Aelion · Freeskate</a>
+            <button
+              class="navbar-toggler rounded-3"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Abrir navegación"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="ms-auto navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link" href="#inicio">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="https://daelion47.org" target="_blank" rel="noopener"
+                    >Interfaz Sutil</a
+                  >
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#aprender">Aprender a Patinar</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#clases">Clases Particulares</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+
+        <div class="container pb-5 pt-5">
+          <div class="row">
+            <div class="col-12 col-md-7 col-xxl-6 pt-5">
+              <h1 class="display-1 mb-3 text-white">Aelion · Freeskate CDMX</h1>
+              <p class="lead mb-4 pe-sm-5 text-white">
+                Soy <strong>Aelion Rhéon</strong>.<br />
+                Instructor de patinaje urbano y patinador Freeskate.<br />
+                Te enseño a fluir en la ciudad con técnica, libertad y presencia.<br />
+                Clases 1 a 1, desde lo básico hasta movimientos avanzados.
+              </p>
+              <a href="#clases" class="btn btn-primary pb-3 pe-5 ps-5 pt-3">Reservar clase</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE: Cómo patino -->
+      <section class="bg-primary pb-5 pt-5 text-white">
+        <div class="container pb-5 pt-5">
+          <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+              <div class="yt-wrap">
+                <a
+                  class="d-block position-relative text-decoration-none"
+                  href="https://youtube.com/shorts/dYQlhWgTBJY"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver Cómo patino en YouTube"
+                >
+                  <img
+                    class="yt-thumb"
+                    src="https://i.ytimg.com/vi/dYQlhWgTBJY/hqdefault.jpg"
+                    alt="Cómo patino — Aelion · Freeskate"
+                    loading="lazy"
+                  />
+                  <span class="yt-overlay">
+                    <i class="bi bi-play-circle-fill text-white yt-play"></i>
+                  </span>
+                </a>
+                <p class="mt-2 mb-0 small">
+                  <a
+                    class="text-white text-decoration-underline"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://youtube.com/shorts/dYQlhWgTBJY"
+                    >Ver video en YouTube</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <h2 class="fw-bold h1 mb-3">Sobre mi forma de patinar</h2>
+              <p class="fw-light">
+                Llevo más de 14 años sobre patines.<br /><br />
+                No me encierro en una sola disciplina: me interesa el movimiento en todas sus formas.<br /><br />
+                Si algo define mi estilo, es el Freeskate — por su libertad, su mezcla, su apertura.<br /><br />
+                Aun así, con el tiempo desarrollé una forma propia de patinar:<br />
+                no repito, elijo.<br /><br />
+                Conecto ideas, perfecciono gestos, expando posibilidades.<br /><br />
+                Para mí, patinar no es técnica por sí sola:<br />
+                es atención, precisión y presencia en movimiento.<br />
+                Ahí nace el estilo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Banner (video local) -->
+      <section id="gif-horizontal" class="bg-primary pt-0 pb-0">
+        <div class="container-fluid px-0">
+          <div class="row gx-0">
+            <video class="w-100" style="max-height: 587px; object-fit: cover" autoplay loop muted playsinline>
+              <source src="media/videos/Video-banner.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE: Movimiento Consciente (Yo danzo) -->
+      <section class="bg-dark pb-5 pt-5 text-center text-lg-start">
+        <div class="container pb-4 pt-4">
+          <div class="row align-items-center">
+            <div class="col-lg-6 ms-auto order-lg-2 py-3 text-center">
+              <div class="yt-wrap">
+                <a
+                  class="d-block position-relative text-decoration-none"
+                  href="https://youtube.com/shorts/ZH9vJy0-IXc"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver Yo danzo en YouTube"
+                >
+                  <img
+                    class="yt-thumb"
+                    src="https://i.ytimg.com/vi/ZH9vJy0-IXc/hqdefault.jpg"
+                    alt="Yo danzo — Aelion · Freeskate"
+                    loading="lazy"
+                  />
+                  <span class="yt-overlay">
+                    <i class="bi bi-play-circle-fill text-white yt-play"></i>
+                  </span>
+                </a>
+                <p class="mt-2 mb-0 small">
+                  <a
+                    class="text-white text-decoration-underline"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://youtube.com/shorts/ZH9vJy0-IXc"
+                    >Ver video en YouTube</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-5 order-lg-1 py-3">
+              <h2 class="display-4 fw-bold text-primary">Movimiento Consciente</h2>
+              <h3 class="fw-light mb-4 text-white">El cuerpo también piensa</h3>
+              <p class="mb-4 text-white">
                 Para mí, el patinaje no es solo una actividad física — es una forma de estar en el mundo.
                 El movimiento no ocurre solo en los músculos, sino en la atención: en cómo escuchas el entorno
                 y respondes al momento presente. Cuando el cuerpo aprende a fluir, afina su percepción.
                 La mente deja de empujar y empieza a acompañar. Desde ahí nace Interfaz Sutil:
-                la continuación natural de la misma búsqueda, expresada desde otro plano. </p>
-                            <a href="https://daelion47.org" class="btn btn-outline-primary mt-3" target="_blank" rel="noopener">
-                Explorar Interfaz Sutil → </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- BLOQUE: Aprender a Patinar (Fluir en patines) -->
-            <section id="aprender" class="bg-light pb-5 pt-5 text-center text-lg-start">
-                <div class="container pb-4 pt-4">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 order-lg-1 text-center mb-4">
-                            <a class="d-block position-relative text-decoration-none" href="https://youtube.com/shorts/514OGlFXd9o" target="_blank" rel="noopener" aria-label="Ver Fluir en patines en YouTube"> <img class="yt-thumb" src="https://i.ytimg.com/vi/514OGlFXd9o/hqdefault.jpg" alt="Fluir en patines — Aelion · Freeskate"> <span class="yt-overlay"> <i class="bi bi-play-circle-fill text-white yt-play"></i> </span> </a>
-                            <p class="mt-2 mb-0 small"> <a class="text-dark text-decoration-underline" target="_blank" rel="noopener" href="https://youtube.com/shorts/514OGlFXd9o">Ver video en YouTube</a> </p>
-                        </div>
-                        <div class="col-lg-6 order-lg-2">
-                            <h2 class="display-5 fw-bold text-primary">Aprender a Patinar</h2>
-                            <p class="lead mb-3 text-dark">
-                Aprender a patinar es mucho más que mantenerse en pie: es un proceso de autoconocimiento, adaptación y constancia. </p>
-                            <p>
+                la continuación natural de la misma búsqueda, expresada desde otro plano.
+              </p>
+              <a href="https://daelion47.org" class="btn btn-outline-primary mt-3" target="_blank" rel="noopener">
+                Explorar Interfaz Sutil →
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE: Aprender a Patinar (Fluir en patines) -->
+      <section id="aprender" class="bg-light pb-5 pt-5 text-center text-lg-start">
+        <div class="container pb-4 pt-4">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 text-center mb-4">
+              <div class="yt-wrap">
+                <a
+                  class="d-block position-relative text-decoration-none"
+                  href="https://youtube.com/shorts/514OGlFXd9o"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver Fluir en patines en YouTube"
+                >
+                  <img
+                    class="yt-thumb"
+                    src="https://i.ytimg.com/vi/514OGlFXd9o/hqdefault.jpg"
+                    alt="Fluir en patines — Aelion · Freeskate"
+                    loading="lazy"
+                  />
+                  <span class="yt-overlay">
+                    <i class="bi bi-play-circle-fill text-white yt-play"></i>
+                  </span>
+                </a>
+                <p class="mt-2 mb-0 small">
+                  <a
+                    class="text-dark text-decoration-underline"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://youtube.com/shorts/514OGlFXd9o"
+                    >Ver video en YouTube</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-6 order-lg-2">
+              <h2 class="display-5 fw-bold text-primary">Aprender a Patinar</h2>
+              <p class="lead mb-3 text-dark">
+                Aprender a patinar es mucho más que mantenerse en pie: es un proceso de autoconocimiento,
+                adaptación y constancia.
+              </p>
+              <p>
                 Como principiante, hay muchas técnicas esenciales que necesitas aprender. Con el tiempo, la clave
                 ya no es aprender más, sino <strong>mejorar lo que ya sabes</strong>. El progreso no siempre es lineal:
-                algunos días avanzas, otros días corriges. Lo importante es mantenerte en movimiento — física y mentalmente. </p>
-                            <p>
+                algunos días avanzas, otros días corriges. Lo importante es mantenerte en movimiento — física y mentalmente.
+              </p>
+              <p>
                 Si te preocupa tu seguridad, el primer paso es entrenar con conciencia. <strong>Caerse es inevitable</strong>,
-                pero puedes aprender a caer de forma segura. El equipo de protección no solo te protege: también te da <strong>confianza para intentar más</strong>. </p>
-                            <p>
+                pero puedes aprender a caer de forma segura. El equipo de protección no solo te protege: también te da
+                <strong>confianza para intentar más</strong>.
+              </p>
+              <p>
                 Otro punto clave es elegir bien tus primeros patines. No se trata de gastar más, sino de encontrar lo que
-                te queda bien y te permite avanzar. </p>
-                            <p> <strong>Practicar sin técnica te estanca. Comprender la técnica sin practicar, también.</strong>
-                Lo que desbloquea tu avance es entrenar con propósito. </p>
-                            <p class="mb-0">
+                te queda bien y te permite avanzar.
+              </p>
+              <p>
+                <strong>Practicar sin técnica te estanca. Comprender la técnica sin practicar, también.</strong>
+                Lo que desbloquea tu avance es entrenar con propósito.
+              </p>
+              <p class="mb-0">
                 Este enfoque es fruto de años de práctica, caídas, preguntas y correcciones. No es una fórmula mágica —
-                pero sí una guía que puede ayudarte a moverte con más claridad, confianza y presencia sobre ruedas. </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- BLOQUE: Clases Particulares (Progreso Bren) -->
-            <section id="clases" class="bg-primary text-white pb-5 pt-5 text-center text-lg-start">
-                <div class="container pt-4 pb-4">
-                    <div class="row align-items-center">
-                        <div class="col-lg-6 order-lg-1 mb-4">
-                            <h2 class="display-5 fw-bold">Clases Particulares</h2>
-                            <p class="lead mb-3">
+                pero sí una guía que puede ayudarte a moverte con más claridad, confianza y presencia sobre ruedas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE: Clases Particulares (Progreso Bren) -->
+      <section id="clases" class="bg-primary text-white pb-5 pt-5 text-center text-lg-start">
+        <div class="container pt-4 pb-4">
+          <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-1 mb-4">
+              <h2 class="display-5 fw-bold">Clases Particulares</h2>
+              <p class="lead mb-3">
                 Si quieres aprender con acompañamiento 1 a 1, doy clases personalizadas para todos los niveles.
-                Desde tus primeros pasos hasta técnicas avanzadas: ajusto el contenido a tu ritmo, tus metas y tu cuerpo. </p>
-                            <p>
-                Entrenar conmigo no es solo aprender trucos. Es entender cómo moverse con técnica, seguridad y conciencia. </p>
-                            <p>
+                Desde tus primeros pasos hasta técnicas avanzadas: ajusto el contenido a tu ritmo, tus metas y tu cuerpo.
+              </p>
+              <p>
+                Entrenar conmigo no es solo aprender trucos. Es entender cómo moverse con técnica, seguridad y conciencia.
+              </p>
+              <p>
                 Llevo más de 14 años patinando y enseñando. Mi enfoque se basa en el Freeskate — por su libertad y versatilidad —
-                pero adapto cada clase a tu nivel, tus metas y tu cuerpo. </p>
-                            <p>
+                pero adapto cada clase a tu nivel, tus metas y tu cuerpo.
+              </p>
+              <p>
                 Trabajamos desde lo básico: cómo caer bien, cómo usar tu equipo, cómo controlar cada movimiento.
-                Y poco a poco avanzamos hacia técnica, fluidez y estilo propio. </p>
-                            <p class="mb-4">
-                No necesitas experiencia previa. Solo ganas de aprender, practicar y descubrir lo que tu cuerpo puede hacer. </p>
-                            <a href="https://wa.me/5215631091069" target="_blank" rel="noopener" class="btn btn-light btn-sm pe-4 ps-4 pt-2 pb-2"> <i class="bi bi-whatsapp me-2"></i>Agendar clase por WhatsApp </a>
-                        </div>
-                        <div class="col-lg-6 order-lg-2 text-center mb-4">
-                            <a class="d-block position-relative text-decoration-none" href="https://youtube.com/shorts/wir0Gl1VHJo" target="_blank" rel="noopener" aria-label="Ver Progreso Bren en YouTube"> <img class="yt-thumb" src="https://i.ytimg.com/vi/wir0Gl1VHJo/hqdefault.jpg" alt="Progreso Bren — 12 meses"> <span class="yt-overlay"> <i class="bi bi-play-circle-fill text-white yt-play"></i> </span> </a>
-                            <p class="mt-2 mb-0 small"> <a class="text-white text-decoration-underline" target="_blank" rel="noopener" href="https://youtube.com/shorts/wir0Gl1VHJo">Ver video en YouTube</a> </p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <!-- BLOQUE: Detalles y Costos (Progreso Majo) -->
-            <section id="detalles-clases" class="bg-light text-dark pt-5 pb-5 text-center text-lg-start">
-                <div class="container">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-lg-6 mb-4 mb-lg-0 text-center">
-                            <a class="d-block position-relative text-decoration-none" href="https://youtube.com/shorts/S_PMSX5s5Eg" target="_blank" rel="noopener" aria-label="Ver Progreso Majo en YouTube"> <img class="yt-thumb" src="https://i.ytimg.com/vi/S_PMSX5s5Eg/hqdefault.jpg" alt="Progreso Majo"> <span class="yt-overlay"> <i class="bi bi-play-circle-fill text-white yt-play"></i> </span> </a>
-                            <p class="mt-2 mb-0 small"> <a class="text-dark text-decoration-underline" target="_blank" rel="noopener" href="https://youtube.com/shorts/S_PMSX5s5Eg">Ver video en YouTube</a> </p>
-                        </div>
-                        <div class="col-lg-6">
-                            <h2 class="fw-bold h3 text-primary">🛼 Detalles y Costos</h2>
-                            <p class="mb-4">
-                Gracias por tu interés en las clases. Aquí te comparto los detalles de forma clara y directa: </p>
-                            <h4 class="fw-semibold text-dark">Clases individuales</h4>
-                            <ul>
-                                <li>$450 por sesión (1h 30min aprox)</li>
-                                <li>Paquete mensual (4 sesiones): $1,400</li>
-                                <li>El lugar y horario lo acordamos junt@s, buscando comodidad y seguridad</li>
-                            </ul>
-                            <h4 class="fw-semibold text-dark mt-4">Metodología</h4>
-                            <p>
+                Y poco a poco avanzamos hacia técnica, fluidez y estilo propio.
+              </p>
+              <p class="mb-4">
+                No necesitas experiencia previa. Solo ganas de aprender, practicar y descubrir lo que tu cuerpo puede hacer.
+              </p>
+
+              <a
+                href="https://wa.me/5215631091069"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-light btn-sm pe-4 ps-4 pt-2 pb-2"
+              >
+                <i class="bi bi-whatsapp me-2"></i>Agendar clase por WhatsApp
+              </a>
+            </div>
+
+            <div class="col-lg-6 order-lg-2 text-center mb-4">
+              <div class="yt-wrap">
+                <a
+                  class="d-block position-relative text-decoration-none"
+                  href="https://youtube.com/shorts/wir0Gl1VHJo"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver Progreso Bren en YouTube"
+                >
+                  <img
+                    class="yt-thumb"
+                    src="https://i.ytimg.com/vi/wir0Gl1VHJo/hqdefault.jpg"
+                    alt="Progreso Bren — 12 meses"
+                    loading="lazy"
+                  />
+                  <span class="yt-overlay">
+                    <i class="bi bi-play-circle-fill text-white yt-play"></i>
+                  </span>
+                </a>
+                <p class="mt-2 mb-0 small">
+                  <a
+                    class="text-white text-decoration-underline"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://youtube.com/shorts/wir0Gl1VHJo"
+                    >Ver video en YouTube</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOQUE: Detalles y Costos (Progreso Majo) -->
+      <section id="detalles-clases" class="bg-light text-dark pt-5 pb-5 text-center text-lg-start">
+        <div class="container">
+          <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+              <div class="yt-wrap">
+                <a
+                  class="d-block position-relative text-decoration-none"
+                  href="https://youtube.com/shorts/S_PMSX5s5Eg"
+                  target="_blank"
+                  rel="noopener"
+                  aria-label="Ver Progreso Majo en YouTube"
+                >
+                  <img
+                    class="yt-thumb"
+                    src="https://i.ytimg.com/vi/S_PMSX5s5Eg/hqdefault.jpg"
+                    alt="Progreso Majo"
+                    loading="lazy"
+                  />
+                  <span class="yt-overlay">
+                    <i class="bi bi-play-circle-fill text-white yt-play"></i>
+                  </span>
+                </a>
+                <p class="mt-2 mb-0 small">
+                  <a
+                    class="text-dark text-decoration-underline"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://youtube.com/shorts/S_PMSX5s5Eg"
+                    >Ver video en YouTube</a
+                  >
+                </p>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <h2 class="fw-bold h3 text-primary">🛼 Detalles y Costos</h2>
+              <p class="mb-4">
+                Gracias por tu interés en las clases. Aquí te comparto los detalles de forma clara y directa:
+              </p>
+
+              <h4 class="fw-semibold text-dark">Clases individuales</h4>
+              <ul>
+                <li>$450 por sesión (1h 30min aprox)</li>
+                <li>Paquete mensual (4 sesiones): $1,400</li>
+                <li>El lugar y horario lo acordamos junt@s, buscando comodidad y seguridad</li>
+              </ul>
+
+              <h4 class="fw-semibold text-dark mt-4">Metodología</h4>
+              <p>
                 Cada clase está adaptada a tu cuerpo, tus intereses y tu nivel. Comenzamos con lo esencial:
                 frenar, impulsarte, esquivar obstáculos, y luego avanzamos hacia circulación urbana segura,
-                estilo, saltos y fluidez. </p>
-                            <p>
-                Si lo que buscas es seguridad, confianza y claridad al rodar — este espacio es para ti. </p>
-                            <p class="text-muted small mb-4">📲 Para más detalles y horarios, solo escríbeme y lo organizamos 😊</p>
-                            <a href="https://wa.me/5215631091069" target="_blank" rel="noopener" class="btn btn-primary btn-sm pe-4 ps-4 pt-2 pb-2"> <i class="bi bi-whatsapp me-2"></i>Agendar clase por WhatsApp </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-        <footer class="bg-dark text-white pt-5 pb-4">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6 mb-4">
-                        <h4 class="fw-bold h5 mb-3 text-uppercase">🜂 Proyecto Daelion47</h4>
-                        <p class="mb-2">
-              Movimiento, presencia y conciencia en acción.<br/>
-              Patinaje, símbolo y verdad encarnada. </p>
-                        <p class="mb-0">© 2026 Aelion Rhéon · Todos los derechos reservados</p>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <h5 class="text-uppercase fw-bold mb-3">Navegación</h5>
-                        <ul class="list-unstyled">
-                            <li>
-                                <a href="#inicio" class="text-white text-decoration-none">Inicio</a>
-                            </li>
-                            <li>
-                                <a href="#aprender" class="text-white text-decoration-none">Aprender a Patinar</a>
-                            </li>
-                            <li>
-                                <a href="#clases" class="text-white text-decoration-none">Clases Particulares</a>
-                            </li>
-                            <li>
-                                <a href="https://daelion47.org" target="_blank" rel="noopener noreferrer" class="text-white text-decoration-none">
-                  Interfaz Sutil </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-3 mb-4">
-                        <h5 class="text-uppercase fw-bold mb-3">Redes</h5>
-                        <div class="d-flex gap-3">
-                            <a href="https://instagram.com/aelion.rheon" target="_blank" rel="noopener" aria-label="Instagram" class="text-white"> <i class="bi bi-instagram fs-4"></i> </a>
-                            <a href="https://tiktok.com/@aelion.rheon" target="_blank" rel="noopener" aria-label="TikTok" class="text-white"> <i class="bi bi-tiktok fs-4"></i> </a>
-                            <a href="https://www.youtube.com/@Daelion47-FSK" target="_blank" rel="noopener" aria-label="YouTube" class="text-white"> <i class="bi bi-youtube fs-4"></i> </a>
-                        </div>
-                    </div>
-                </div>
+                estilo, saltos y fluidez.
+              </p>
+              <p>
+                Si lo que buscas es seguridad, confianza y claridad al rodar — este espacio es para ti.
+              </p>
+
+              <p class="text-muted small mb-4">📲 Para más detalles y horarios, solo escríbeme y lo organizamos 😊</p>
+
+              <a
+                href="https://wa.me/5215631091069"
+                target="_blank"
+                rel="noopener"
+                class="btn btn-primary btn-sm pe-4 ps-4 pt-2 pb-2"
+              >
+                <i class="bi bi-whatsapp me-2"></i>Agendar clase por WhatsApp
+              </a>
             </div>
-        </footer>
-        <!-- JS (tus rutas originales) -->
-        <script src="assets/js/popper.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
-    </body>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark text-white pt-5 pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <h4 class="fw-bold h5 mb-3 text-uppercase">🜂 Proyecto Daelion47</h4>
+            <p class="mb-2">
+              Movimiento, presencia y conciencia en acción.<br />
+              Patinaje, símbolo y verdad encarnada.
+            </p>
+            <p class="mb-0">© 2026 Aelion Rhéon · Todos los derechos reservados</p>
+          </div>
+
+          <div class="col-lg-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Navegación</h5>
+            <ul class="list-unstyled">
+              <li><a href="#inicio" class="text-white text-decoration-none">Inicio</a></li>
+              <li><a href="#aprender" class="text-white text-decoration-none">Aprender a Patinar</a></li>
+              <li><a href="#clases" class="text-white text-decoration-none">Clases Particulares</a></li>
+              <li>
+                <a
+                  href="https://daelion47.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-white text-decoration-none"
+                  >Interfaz Sutil</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 mb-4">
+            <h5 class="text-uppercase fw-bold mb-3">Redes</h5>
+            <div class="d-flex gap-3">
+              <a
+                href="https://instagram.com/aelion.rheon"
+                target="_blank"
+                rel="noopener"
+                aria-label="Instagram"
+                class="text-white"
+              >
+                <i class="bi bi-instagram fs-4"></i>
+              </a>
+
+              <a
+                href="https://tiktok.com/@aelion.rheon"
+                target="_blank"
+                rel="noopener"
+                aria-label="TikTok"
+                class="text-white"
+              >
+                <i class="bi bi-tiktok fs-4"></i>
+              </a>
+
+              <a
+                href="https://www.youtube.com/@Daelion47-FSK"
+                target="_blank"
+                rel="noopener"
+                aria-label="YouTube"
+                class="text-white"
+              >
+                <i class="bi bi-youtube fs-4"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- JS (tus rutas originales) -->
+    <script src="assets/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+  </body>
 </html>
