@@ -17,3 +17,37 @@ body.poster {
         background-color: rgba(0, 0, 0, 0.25);
     }
 }
+
+/* YouTube thumbnails (shorts) */
+.yt-wrap{
+  max-width: 360px;
+  margin: 0 auto;
+}
+
+@media (min-width: 992px){
+  .yt-wrap{ max-width: 420px; }
+}
+
+.yt-thumb{
+  aspect-ratio: 9 / 16;
+  object-fit: cover;
+  width: 100%;
+  border-radius: .75rem;
+  display: block;
+}
+
+.yt-play{
+  font-size: 4rem;
+  line-height: 1;
+  opacity: .95;
+  text-shadow: 0 8px 30px rgba(0,0,0,.55);
+}
+
+.yt-overlay{
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(to bottom, rgba(0,0,0,.15), rgba(0,0,0,.35));
+  border-radius: .75rem;
+}
